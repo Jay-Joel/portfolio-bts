@@ -1,36 +1,32 @@
 // src/constants/index.js
+import HTML5 from "../assets/image/html5.svg";
+import CSS3 from "../assets/image/css3.svg";
+import JS from "../assets/image/javascript.svg";
+import ReactLogo from "../assets/image/react.svg";
+import Tailwind from "../assets/image/tailwind.svg";
+
+import PHP from "../assets/image/php.svg";
+import MySQL from "../assets/image/mysql.svg";
+
+import Git from "../assets/image/git.svg";
+import GitHub from "../assets/image/github.svg";
+import VSCode from "../assets/image/vscode.svg";
 
 export const skills = {
   frontend: [
-    {
-      id: 1,
-      name: "HTML5",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1280px-HTML5_logo_and_wordmark.svg.png",
-    },
-    {
-      id: 2,
-      name: "CSS3",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/960px-CSS3_logo_and_wordmark.svg.png",
-    },
-    {
-      id: 3,
-      name: "JavaScript",
-      image: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-    },
-    {
-      id: 4,
-      name: "React",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/3840px-React-icon.svg.png",
-    },
-    {
-      id: 5,
-      name: "Tailwind CSS",
-      image: "https://codekitapp.com/images/help/free-tailwind-icon@2x.png",
-    },
+    { id: 1, name: "HTML5", image: HTML5 },
+    { id: 2, name: "CSS3", image: CSS3 },
+    { id: 3, name: "JavaScript", image: JS },
+    { id: 4, name: "React", image: ReactLogo },
+    { id: 5, name: "Tailwind CSS", image: Tailwind },
   ],
-
   backend: [
-    
+    { id: 1, name: "PHP", image: PHP },
+    { id: 2, name: "MySQL", image: MySQL },
   ],
-  tools: [],
+  tools: [
+    { id: 1, name: "Git", image: Git },
+    { id: 2, name: "GitHub", image: GitHub },
+    { id: 3, name: "VS Code", image: VSCode },
+  ],
 };

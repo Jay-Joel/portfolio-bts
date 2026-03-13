@@ -35,7 +35,7 @@ const Competences = () => {
 
       {/* Backend */}
       <h1 className="text-2xl font-bold">BackEnd</h1>
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 gap-4">
         {skills.backend.map((skill) => (
           <Card
             key={skill.id}
@@ -49,7 +49,7 @@ const Competences = () => {
 
       {/* Tools */}
       <h1 className="text-2xl font-bold">Outils & DevOps</h1>
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid grid-cols-3 gap-4">
         {skills.tools.map((skill) => (
           <Card
             key={skill.id}
