@@ -6,19 +6,42 @@ import Projets from "./section/Projets";
 import Competences from "./section/Competences";
 import VeilleTechno from "./section/VeilleTechno";
 import Contact from "./section/Contact";
-import Footer from "./component/Footer";
+import Footer from "./component/Footer.jsx";
 
 function App() {
   return (
     <main className="bg-linear-to-br from-slate-950 via-slate-900 to-slate-800 text-slate-100">
       <Navbar />
-      <Hero />
-      <About />
-      <Parcours />
-      <Projets />
-      <Competences />
-      <VeilleTechno />
-      <Contact />
+
+      {/* Chaque section doit avoir un id correspondant au href de la navbar */}
+      <section id="hero">
+        <Hero />
+      </section>
+
+      <section id="about">
+        <About />
+      </section>
+
+      <section id="parcours">
+        <Parcours />
+      </section>
+
+      <section id="projets">
+        <Projets />
+      </section>
+
+      <section id="skills">
+        <Competences />
+      </section>
+
+      <section id="veille">
+        <VeilleTechno />
+      </section>
+
+      <section id="contact">
+        <Contact />
+      </section>
+
       <Footer />
     </main>
   );

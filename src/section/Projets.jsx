@@ -1,87 +1,87 @@
-const Projets = () => {
+// src/components/Projet.jsx
+import { useState } from "react";
+import { projets } from "../constants/projects";
+import ProjectCard from "../component/ProjectCard";
+
+// Filtres disponibles
+const FILTERS = [
+  { id: "all", label: "Tous", icon: "🎯" },
+  { id: "web", label: "Web", icon: "🌐" },
+  { id: "mobile", label: "Mobile", icon: "📱" },
+  { id: "other", label: "Autres", icon: "🔧" },
+];
+
+const Projet = () => {
+  const [activeFilter, setActiveFilter] = useState("all");
+
+  const filteredProjets =
+    activeFilter === "all"
+      ? projets
+      : projets.filter((p) => p.categorie === activeFilter);
+
   return (
-      <div className="flex flex-col items-center justify-center h-screen">
-        <div>
-            <h1 className="text-3xl text-center text-align:center font-bold text-amber-500">Mes Projets</h1>
-            <br/>
-            <p className="font-sm text-sm text-slate-400">
-            Découvrez les projets que j'ai réalisés durant ma formation et mes expériences professionnelles.
-            </p>
-        </div>
-          {/* Tous les projets documentés avec capture d'écran */}
-          
-
-          {/*Liens GitHub vers le code source*/}
-                <div class="flex flex-row items-center justify-center space-x-5">
-        <div class="basis-1/3">
-          <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
-            <div class="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
-              <img src="https://cdn.pfps.gg/pfps/8266-eggman.png" alt="card-image" />
-          </div>
-          <div class="p-4">
-            <h6 class="mb-2 text-slate-800 text-xl font-semibold">
-              Projet 1
-            </h6>
-            <p class="text-slate-600 leading-normal font-light">
-              Description du projet...
-            </p>
-          </div>
-          <div class="px-4 pb-4 pt-0 mt-2">
-            <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
-              Read more
-          </button>
-          </div>
-          </div> 
+    <section id="projets" className="py-20 px-6">
+      <div className="max-w-6xl mx-auto">
+        {/* En-tête */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-amber-500 mb-4">💼 Mes Projets</h2>
+          <p className="mt-6 text-slate-400 max-w-2xl mx-auto">
+            Découvrez les projets que j&apos;ai réalisés durant ma formation et
+            mes expériences professionnelles.
+          </p>
         </div>
 
-        <div class="basis-1/3">
-        <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
-          <div class="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
-            <img src="https://cdn.pfps.gg/pfps/8266-eggman.png" alt="card-image" />
-          </div>
-          <div class="p-4">
-            <h6 class="mb-2 text-slate-800 text-xl font-semibold">
-              Projet 2
-            </h6>
-            <p class="text-slate-600 leading-normal font-light">
-              Description du projet...
-            </p>
-          </div>
-          <div class="px-4 pb-4 pt-0 mt-2">
-            <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
-              Read more
-          </button>
-          </div>
-          </div> 
-        </div>
-          
-        <div class="basis-1/3">
-          <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
-            <div class="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
-              <img src="https://cdn.pfps.gg/pfps/8266-eggman.png" alt="card-image" />
-          </div>
-          <div class="p-4">
-            <h6 class="mb-2 text-slate-800 text-xl font-semibold">
-              Projet 3
-            </h6>
-            <p class="text-slate-600 leading-normal font-light">
-              Description du projet...
-            </p>
-          </div>
-          <div class="px-4 pb-4 pt-0 mt-2">
-            <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
-              Read more
-          </button>
-          </div>
-          </div> 
+        {/* Filtres */}
+        <div className="flex justify-center gap-2 mb-12 flex-wrap">
+          {FILTERS.map((filter) => (
+            <button
+              key={filter.id}
+              onClick={() => setActiveFilter(filter.id)}
+              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300
+                ${
+                  activeFilter === filter.id
+                    ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30"
+                    : "glass text-slate-300 hover:text-white hover:bg-white/10"
+                }`}
+            >
+              <span className="mr-2">{filter.icon}</span>
+              {filter.label}
+            </button>
+          ))}
         </div>
 
-          {/*Tableau de synthèse des compétences COMPLET*/}
+        {/* Grille de projets */}
+        {filteredProjets.length > 0 ? (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredProjets.map((projet) => (
+              <ProjectCard key={projet.titre} projet={projet} />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-20">
+            <span className="text-6xl mb-4 block">🔍</span>
+            <p className="text-slate-400">
+              Aucun projet trouvé dans cette catégorie.
+            </p>
+          </div>
+        )}
 
-
+        {/* Message de fin */}
+        <div className="mt-16 text-center">
+          <div className="inline-block p-6 rounded-2xl glass">
+            <p className="text-slate-300">
+              🚀{" "}
+              <span className="text-orange-400 font-semibold">
+                Plus de projets à venir
+              </span>{" "}
+              — Je travaille continuellement sur de nouveaux projets
+              passionnants !
+            </p>
+          </div>
+        </div>
       </div>
-      </div>
+    </section>
   );
 };
 
-export default Projets;
+export default Projet;
