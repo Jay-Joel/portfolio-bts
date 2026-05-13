@@ -12,30 +12,18 @@ const Contact = () => {
     const formData = new FormData(event.target);
 
     // Clé Web3Forms depuis le .env
-    formData.append(
-      "access_key",
-      import.meta.env.VITE_WEB3FORMS_KEY
-    );
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
 
     // Personnalisation email reçu
-    formData.append(
-      "subject",
-      "Nouveau message depuis mon portfolio"
-    );
+    formData.append("subject", "Nouveau message depuis mon portfolio");
 
-    formData.append(
-      "from_name",
-      "Portfolio - Ton Prénom"
-    );
+    formData.append("from_name", "Portfolio - Ton Prénom");
 
     try {
-      const response = await fetch(
-        "https://api.web3forms.com/submit",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
 
       if (!response.ok) {
         throw new Error("Erreur réseau");
@@ -60,15 +48,12 @@ const Contact = () => {
   return (
     <section className="flex flex-col items-center justify-center min-h-screen px-6 py-16">
       <div className="max-w-xl w-full">
-
         {/* Header */}
         <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-amber-500">
-            Contactez-moi
-          </h1>
+          <h1 className="text-3xl font-bold text-amber-500">Contactez-moi</h1>
           <p className="mt-3 text-sm text-slate-400">
-            Que ce soit pour un projet web, une collaboration ou une opportunité d'alternance,
-            n'hésitez pas à me contacter.
+            Que ce soit pour un projet web, une collaboration ou une opportunité
+            d'alternance, n'hésitez pas à me contacter.
           </p>
         </div>
 
@@ -93,9 +78,7 @@ const Contact = () => {
 
           {/* Email */}
           <div>
-            <label className="block text-sm text-slate-300 mb-1">
-              Email
-            </label>
+            <label className="block text-sm text-slate-300 mb-1">Email</label>
             <input
               type="email"
               name="email"
@@ -107,9 +90,7 @@ const Contact = () => {
 
           {/* Message */}
           <div>
-            <label className="block text-sm text-slate-300 mb-1">
-              Message
-            </label>
+            <label className="block text-sm text-slate-300 mb-1">Message</label>
             <textarea
               name="message"
               rows="5"
