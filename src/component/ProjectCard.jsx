@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ProjectCard = ({ projet }) => {
+const ProjectCard = ({ projet, onOpen }) => {
   const [hover, setHover] = useState(false);
 
   return (
@@ -11,65 +11,65 @@ const ProjectCard = ({ projet }) => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      {/* Rectangle image en haut */}
-      <div className="relative w-full h-52 md:h-56 rounded-t-xl overflow-hidden">
-        {/* Image */}
+      {/* IMAGE */}
+      <div className="relative w-full h-52 md:h-56">
         <img
           src={projet.image}
           alt={projet.titre}
           className="w-full h-full object-cover"
         />
 
-        {/* Overlay noir uniquement sur l'image */}
         <div
-          className={`absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center gap-3 transition-opacity duration-300
-            ${hover ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 bg-black/70 flex items-center justify-center gap-3 transition-opacity duration-300
+          ${hover ? "opacity-100" : "opacity-0"}`}
         >
           {projet.demo && (
             <a
               href={projet.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 bg-orange-500 text-white rounded-md text-sm hover:bg-orange-600 transition-colors"
+              className="px-4 py-2 bg-orange-500 text-white rounded-md text-sm"
             >
               🚀 Démo
             </a>
           )}
+
           {projet.github && (
             <a
               href={projet.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 bg-slate-800 text-white rounded-md text-sm hover:bg-slate-700 transition-colors"
+              className="px-4 py-2 bg-slate-800 text-white rounded-md text-sm"
             >
               🐙 GitHub
             </a>
           )}
         </div>
 
-        {/* Badge catégorie avec fond visible */}
-        <div className="absolute top-3 left-3 px-3 py-1 bg-slate-800/70 border border-slate-500/20 rounded-lg text-xs text-white/80 z-10">
-          {projet.categorie === "web" && "🌐 Web"}
-          {projet.categorie === "mobile" && "📱 Mobile"}
-          {projet.categorie === "other" && "🔧 Autre"}
+        {/* CATEGORY */}
+        <div className="absolute top-3 left-3 px-3 py-1 bg-slate-800/70 rounded-lg text-xs text-white/80">
+          {projet.categorie}
         </div>
       </div>
 
-      {/* Contenu texte sous l'image */}
+      {/* CONTENT */}
       <div className="p-4">
-        <h4 className="text-lg font-bold text-white mb-2 group-hover:text-orange-400 transition-colors">
-          {projet.titre}
-        </h4>
+        <h4 className="text-lg font-bold text-white mb-2">{projet.titre}</h4>
+
         <p className="text-slate-400 text-sm mb-4 line-clamp-2">
           {projet.description}
         </p>
 
-        {/* Technologies */}
-        <div className="flex flex-wrap gap-2">
+        {/* BUTTON DETAILS */}
+        <button
+          onClick={onOpen}
+          className="w-full mt-2 px-4 py-2 bg-orange-500/10 text-orange-300 border border-orange-500/30 rounded-md hover:bg-orange-500/20 transition"
+        >
+          Voir détails
+        </button>
+
+        {/* TECH */}
+        <div className="flex flex-wrap gap-2 mt-3">
           {projet.technologies?.map((tech) => (
             <span
               key={tech}
-              className="px-2 py-1 text-xs rounded-md bg-orange-500/10 text-orange-300 border border-orange-500/20"
+              className="px-2 py-1 text-xs rounded-md bg-orange-500/10 text-orange-300"
             >
               {tech}
             </span>

@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 const NAV_ITEMS = [
   { href: "#hero", label: "Accueil" },
   { href: "#about", label: "À propos" },
-  { href: "#parcours", label: "Parcours" },
-  { href: "#projets", label: "Projets" },
   { href: "#skills", label: "Compétences" },
+  { href: "#projets", label: "Projets" },
+  { href: "#parcours", label: "Expériences Professionnelles" },
   { href: "#veille", label: "Veille" },
   { href: "#contact", label: "Contact" },
 ];
@@ -50,21 +50,16 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 py-1 shadow-lg shadow-black/30">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        
         {/* Logo */}
         <button
           onClick={() => handleClick("#hero")}
           className="text-2xl font-bold"
         >
-          <span className="text-orange-500">
-                &lt;
-              </span>
+          <span className="text-orange-500">&lt;</span>
 
-              <span> MDJJ </span>
+          <span> MDJJ </span>
 
-              <span className="text-orange-500">
-                /&gt;
-              </span>
+          <span className="text-orange-500">/&gt;</span>
         </button>
 
         {/* Navigation Desktop */}

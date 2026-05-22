@@ -22,16 +22,16 @@ function App() {
         <About />
       </section>
 
-      <section id="parcours">
-        <Parcours />
+      <section id="skills">
+        <Competences />
       </section>
 
       <section id="projets">
         <Projets />
       </section>
 
-      <section id="skills">
-        <Competences />
+      <section id="parcours">
+        <Parcours />
       </section>
 
       <section id="veille">

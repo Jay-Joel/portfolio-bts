@@ -99,15 +99,7 @@ const About = () => {
             créer des solutions innovantes et performantes.
           </p>
 
-          <p
-            className="
-              mt-4
-              text-sm
-              sm:text-base
-              text-slate-400
-              leading-relaxed
-            "
-          >
+          <p className="mt-4 text-sm sm:text-base text-slate-400 leading-relaxed">
             Actuellement à la recherche d&apos;une alternance, je suis motivé à
             apprendre et à contribuer au sein d&apos;une équipe dynamique. Ma
             curiosité et ma rigueur me poussent à toujours améliorer mes
@@ -153,7 +145,7 @@ const About = () => {
           grid-cols-1
           md:grid-cols-2
           gap-8
-          max-w-5xl
+          max-w-6xl
           w-full
         "
       >
@@ -169,24 +161,47 @@ const About = () => {
             transition-all
             duration-300
             hover:scale-105
-            p-6
+            p-8
+            min-h-[520px]
           "
         >
           <h5 className="text-white text-xl font-semibold">Option SISR</h5>
 
-          <p
-            className="
-              text-slate-400
-              leading-relaxed
-              mt-4
-              text-sm
-              sm:text-base
-            "
-          >
-            Formation axée sur la conception, l&apos;installation,
-            l&apos;administration et la sécurisation des infrastructures
-            informatiques.
-          </p>
+          <div className="space-y-6 mt-4">
+            <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
+              L&apos;option{" "}
+              <span className="font-semibold text-white">
+                Solution d&apos;infrastructure, systèmes et réseaux (SISR)
+              </span>{" "}
+              forme des professionnels des réseaux et équipements informatiques
+              (installation, maintenance, sécurité).
+            </p>
+
+            <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
+              En sortant d&apos;un{" "}
+              <span className="font-semibold text-white">BTS SIO SISR</span>,
+              vous serez capables de gérer et d&apos;administrer le réseau
+              d&apos;une société et d&apos;assurer sa sécurité et sa
+              maintenance.
+            </p>
+
+            <div>
+              <p className="text-slate-300 mb-3 text-sm sm:text-base">
+                Les techniciens supérieurs en informatique option SISR peuvent
+                accéder aux métiers de :
+              </p>
+
+              <ul className="space-y-2 text-slate-400 list-disc list-inside text-sm sm:text-base">
+                <li>Administrateur systèmes et réseaux</li>
+                <li>Informaticien support et déploiement</li>
+                <li>Pilote d&apos;exploitation</li>
+                <li>Support systèmes et réseaux</li>
+                <li>Technicien d&apos;infrastructure</li>
+                <li>Technicien de production</li>
+                <li>Technicien micro et réseaux</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         {/* SLAM */}
@@ -201,23 +216,41 @@ const About = () => {
             transition-all
             duration-300
             hover:scale-105
-            p-6
+            p-8
+            min-h-[520px]
           "
         >
           <h5 className="text-white text-xl font-semibold">Option SLAM</h5>
 
-          <p
-            className="
-              text-slate-400
-              leading-relaxed
-              mt-4
-              text-sm
-              sm:text-base
-            "
-          >
-            Formation orientée développement d&apos;applications web, mobiles et
-            métiers, gestion de bases de données et maintenance logicielle.
-          </p>
+          <div className="space-y-6 mt-4">
+            <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
+              L&apos;option{" "}
+              <span className="font-semibold text-white">
+                Solutions logicielles et applications métiers
+              </span>{" "}
+              forme des spécialistes des logiciels (rédaction d&apos;un cahier
+              des charges, formulation des besoins et spécifications,
+              développement, intégration au sein de la société).
+            </p>
+
+            <div>
+              <p className="text-slate-300 mb-3 text-sm sm:text-base">
+                Les techniciens supérieurs en informatique option SLAM sont
+                préparés aux métiers de :
+              </p>
+
+              <ul className="space-y-2 text-slate-400 list-disc list-inside text-sm sm:text-base">
+                <li>Développeur d&apos;applications informatiques</li>
+                <li>Développeur informatique</li>
+                <li>Analyste d&apos;applications ou d&apos;études</li>
+                <li>Analyste programmeur</li>
+                <li>Programmeur analyste</li>
+                <li>Programmeur d&apos;applications</li>
+                <li>Responsable des services applicatifs</li>
+                <li>Technicien d&apos;études informatiques</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -52,9 +52,12 @@ const Parcours = () => {
   return (
     <section className="py-20 px-6 flex flex-col items-center">
       <div className="text-center mb-16">
-        <h1 className="text-3xl font-bold text-amber-500 mb-4">Mon Parcours</h1>
+        <h1 className="text-3xl font-bold text-amber-500 mb-4">
+          Mes Expériences Professionnelles
+        </h1>
         <p className="text-sm text-slate-400 max-w-2xl mx-auto">
-          Mes expériences professionnelles et stages qui m'ont permis de développer mes compétences en entreprise.
+          Mes expériences professionnelles et stages qui m'ont permis de
+          développer mes compétences en entreprise.
         </p>
       </div>
 

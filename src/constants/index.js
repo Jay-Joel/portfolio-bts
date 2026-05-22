@@ -11,6 +11,7 @@ import MySQL from "../assets/image/mysql.svg";
 import Git from "../assets/image/git.svg";
 import GitHub from "../assets/image/github.svg";
 import VSCode from "../assets/image/vscode.svg";
+import Vite from "../assets/image/vite.svg";
 
 export const skills = {
   frontend: [
@@ -28,5 +29,6 @@ export const skills = {
     { id: 1, name: "Git", image: Git },
     { id: 2, name: "GitHub", image: GitHub },
     { id: 3, name: "VS Code", image: VSCode },
+    { id: 4, name: "Vite", image: Vite },
   ],
 };
