@@ -62,7 +62,7 @@ export const projects = [
     ],
     github: "https://github.com/",
     demo: "#",
-    image: JCKN,
+    image: QuickEvent,
 
     details: {
       objectif:
@@ -114,7 +114,7 @@ export const projects = [
     ],
     github: "https://github.com/",
     demo: "#",
-    image: QuickEvent,
+    image: JCKN,
 
     details: {
       objectif:

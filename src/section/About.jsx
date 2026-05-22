@@ -67,7 +67,7 @@ const About = () => {
               border-4
               border-amber-500
             "
-            src="https://cdn.pfps.gg/pfps/8266-eggman.png"
+            src="https://t4.ftcdn.net/jpg/07/72/57/19/360_F_772571913_XkQYqda1XTYBadqaFNh72abqZkEsajEe.jpg"
             alt="image"
           />
         </div>
